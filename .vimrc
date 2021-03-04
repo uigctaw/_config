@@ -1,5 +1,13 @@
 " First, manually install vim-plug!
-"
+" Remeber to call `:PlugInstall` to actually install the plugins!
+" Also YCM is likely not to work out of the box due to missing core
+" library. That sucks I would say. Anyway. You might beed to run something
+" along the lines of:
+" ```
+" $ sudo apt install build-essential cmake python3-dev
+" $ cd ~/.vim/plugged/YouCompleteMe
+" $ python3 install.py --clang-completer
+" ```
 "
 call plug#begin('~/.vim/plugged')
 
