@@ -35,3 +35,6 @@ set splitbelow
 nnoremap <C-b> :YcmCompleter GoTo
 
 nnoremap tt :r !date -u '+\%F \%T \%Z'
+
+# diable YCM hovering hints
+let g:ycm_auto_hover=''
