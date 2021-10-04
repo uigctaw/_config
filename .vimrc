@@ -1,18 +1,10 @@
-" First, manually install vim-plug!
-" Remeber to call `:PlugInstall` to actually install the plugins!
-" Also YCM is likely not to work out of the box due to missing core
-" library. That sucks I would say. Anyway. You might beed to run something
-" along the lines of:
-" ```
-" $ sudo apt install build-essential cmake python3-dev
-" $ cd ~/.vim/plugged/YouCompleteMe
-" $ python3 install.py --clang-completer
-" ```
+" First, manually install vim-plug.
+" Remeber to call `:PlugInstall` to actually install the plugins.
 "
 call plug#begin('~/.vim/plugged')
 
 " Make sure you use single quotes
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'davidhalter/jedi-vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'rust-lang/rust.vim'
 
@@ -32,9 +24,10 @@ set expandtab
 
 set splitbelow
 
-nnoremap <C-b> :YcmCompleter GoTo
-
 nnoremap tt :r !date -u '+\%F \%T \%Z'
 
-# disable YCM hovering hints
-let g:ycm_auto_hover=''
+" disable rather irritating auto popups with function signature
+let g:jedi#show_call_signatures = 0
+
+" disable irritating scratch window popping up
+set completeopt-=preview
