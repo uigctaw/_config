@@ -25,6 +25,7 @@ set expandtab
 set splitbelow
 
 nnoremap tt :r !date -u '+\%F \%T \%Z'
+nnoremap cr :s/(/(\r        / \| s/, /,\r        /g \| s/)/,\r)/
 
 " disable rather irritating auto popups with function signature
 let g:jedi#show_call_signatures = 0
